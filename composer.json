@@ -1,0 +1,20 @@
+{
+    "name": "root/api-master-silex",
+    "require": {
+        "silex/silex": "^2.0"
+    },
+    "require-dev": {
+        "twig/twig": "^2.1"
+    },
+    "authors": [
+        {
+            "name": "Felipe Pimenta",
+            "email": "fhpimenta12@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ApiMaster\\": "src/"
+        }
+    }
+}
