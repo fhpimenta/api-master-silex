@@ -5,12 +5,12 @@ namespace ApiMaster\Model;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Beer
+ * Users
  *
- * @ORM\Table(name="beers")
+ * @ORM\Table(name="users")
  * @ORM\Entity
  */
-class Beer
+class Users
 {
     /**
      * @var integer
@@ -24,30 +24,37 @@ class Beer
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=150, nullable=true)
+     * @ORM\Column(name="name", type="string", length=250, nullable=true)
      */
     private $name;
 
     /**
-     * @var float
+     * @var string
      *
-     * @ORM\Column(name="price", type="float", precision=10, scale=2, nullable=true)
+     * @ORM\Column(name="celphone", type="string", length=15, nullable=true)
      */
-    private $price;
+    private $celphone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=30, nullable=true)
+     * @ORM\Column(name="email", type="string", length=80, nullable=true)
      */
-    private $type;
+    private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="mark", type="string", length=30, nullable=true)
+     * @ORM\Column(name="website", type="string", length=80, nullable=true)
      */
-    private $mark;
+    private $website;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=250, nullable=true)
+     */
+    private $password;
 
     /**
      * @var \DateTime
@@ -96,55 +103,71 @@ class Beer
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getPrice()
+    public function getCelphone()
     {
-        return $this->price;
+        return $this->celphone;
     }
 
     /**
-     * @param float $price
+     * @param string $celphone
      */
-    public function setPrice($price)
+    public function setCelphone($celphone)
     {
-        $this->price = $price;
+        $this->celphone = $celphone;
     }
 
     /**
      * @return string
      */
-    public function getType()
+    public function getEmail()
     {
-        return $this->type;
+        return $this->email;
     }
 
     /**
-     * @param string $type
+     * @param string $email
      */
-    public function setType($type)
+    public function setEmail($email)
     {
-        $this->type = $type;
+        $this->email = $email;
     }
 
     /**
      * @return string
      */
-    public function getMark()
+    public function getWebsite()
     {
-        return $this->mark;
+        return $this->website;
     }
 
     /**
-     * @param string $mark
+     * @param string $website
      */
-    public function setMark($mark)
+    public function setWebsite($website)
     {
-        $this->mark = $mark;
+        $this->website = $website;
     }
 
     /**
-     * @return DateTime
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -152,7 +175,7 @@ class Beer
     }
 
     /**
-     * @param DateTime $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -160,7 +183,7 @@ class Beer
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -168,12 +191,11 @@ class Beer
     }
 
     /**
-     * @param DateTime $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
     }
-
 
 }

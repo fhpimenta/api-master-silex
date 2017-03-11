@@ -52,3 +52,12 @@ $app->register(new \Dflydev\Provider\DoctrineOrm\DoctrineOrmServiceProvider(), a
     'orm.auto_generate_proxies' => true,
     'orm.default_cache' => 'array'
 ));
+
+$app->register(new \ApiMaster\Service\JWTServiceProvider(), [
+    'iss' => $_SERVER['SERVER_NAME'],
+    'secret' => 'xyxyoks',
+    'expires' => 3600,
+    'signer' => 'HMACS'
+]);
+
+
